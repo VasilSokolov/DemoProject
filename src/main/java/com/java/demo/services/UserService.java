@@ -10,4 +10,6 @@ public interface UserService {
 	void persist(RegisterUser registerUser);
 	
 	List<ViewUser> findAll ();
+	
+	
 }
