@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8"/>
+</head>
+<body>
+	<h1>Create new User</h1>
+	<form action="post">
+	  <div class="container">
+	  	<div class="row">
+		    <label><b>Username</b></label>
+		    <input type="text" placeholder="Username" name="username" required>
+		</div>
+		
+	  	<div class="row">
+	    <label><b>Password</b></label>
+	    <input type="password" placeholder="Enter Password" name="psw" required>		
+	  	</div>
+	    <div class="clearfix">
+	      <button type="button"  class="cancelbtn">Cancel</button>
+	      <input type="submit" class="signupbtn" value="Create"></input>
+	    </div>
+	  </div>
+	</form>
+</body>
+</html>
