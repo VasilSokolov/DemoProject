@@ -12,6 +12,12 @@ public interface UserService {
 	
 	List<ViewUser> findAll ();
 	
+	public User findById(Long id);
+	
 	void saveUser (User user);
+	
+	void updateUser(User user);
+	 
+    void deleteUser(RegisterUser registerUser);
 	
 }

@@ -1,23 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8"/>
 	<title>Insert title here</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 </head>
 <body>
-	<div class="table-responsive col-md-6">
+	<div class="table-responsive col-md-8">
 	  	<table class="table table-bordered">
 		  	<thead>
 		      <tr>
 		        <th>Users</th>
+		        <th>Email</th>
 		      </tr>
 		    </thead>
 		    <tbody th:each="user : ${users}">
 			    <tr>
-			        <td class="col-md-2" th:text="${user.username}">...</td>			        
+			        <td class="col-md-2" th:text="${user.username}">...</td>
+			        <td class="col-md-2" th:text="(${user} and ${user.email}) ? ${user.email} : '----'" >...</td>
+			        <td>
+		                <a th:href="@{/users/edit/{id}(id=${user.id})}" class="btn btn-info">Edit</a>
+		            </td>	
+			        <td>
+		                <a th:href="@{/users/delete/{id}(id=${user.id})}" class="btn btn-danger">Delete</a>
+		            </td>				        
 			    </tr>
 			</tbody>   
 	  	</table>

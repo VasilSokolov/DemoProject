@@ -2,11 +2,19 @@ package com.java.demo.models.bindengModels.user;
 
 public class RegisterUser {
 	
+	private Long id;
 	private String email;
 	private String username;
 	private String password;
 	private String confirmPassword;
 		
+	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	public String getEmail() {
 		return email;
 	}

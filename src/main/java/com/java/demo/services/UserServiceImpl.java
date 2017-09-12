@@ -24,8 +24,13 @@ public class UserServiceImpl implements UserService {
 	public void persist(RegisterUser registerUser) {
 		ModelMapper modelMapper = new ModelMapper();
 		User user = modelMapper.map(registerUser, User.class);
-		this.userRepository.saveAndFlush(user);
+		this.userRepository.save(user);
 	}
+	
+	@Override
+	public User findById(Long id) {
+        return userRepository.findOne(id);
+    }
 		
 	@Override
 	public List<ViewUser> findAll() {
@@ -44,5 +49,17 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public void saveUser(User user) {
 		userRepository.save(user);		
+	}
+
+	@Override
+	public void updateUser(User user) {
+		saveUser(user);
+	}
+
+	@Override
+	public void deleteUser(RegisterUser registerUser) {
+		ModelMapper modelMapper = new ModelMapper();
+		User user = modelMapper.map(registerUser, User.class);
+		userRepository.delete(user.getId());
 	}
 }

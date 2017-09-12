@@ -5,21 +5,17 @@
 </head>
 <body>
 	<h1>Create new User</h1>
-	<form action="post">
+	<form th:method="post" th:object="${user}">
 	  <div class="container">
 	  	<div class="row">
 		    <label><b>Username</b></label>
-		    <input type="text" placeholder="Username" name="username" required>
+		    <input type="text" th:field = "*{username}" placeholder="Username" required>
+		    <label><b>Email</b></label>
+		    <input type="email" th:field = "*{email}" placeholder="Email" name="email" required>
+		    <label><b>Password</b></label>
+		    <input type="password" th:field = "*{password}" placeholder="Enter Password" required>
+	      	<input type="submit" class="btn btn-info" th:value="${type}"></input>
 		</div>
-		
-	  	<div class="row">
-	    <label><b>Password</b></label>
-	    <input type="password" placeholder="Enter Password" name="psw" required>		
-	  	</div>
-	    <div class="clearfix">
-	      <button type="button"  class="cancelbtn">Cancel</button>
-	      <input type="submit" class="signupbtn" value="Create"></input>
-	    </div>
 	  </div>
 	</form>
 </body>
