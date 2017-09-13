@@ -52,7 +52,9 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void updateUser(User user) {
+	public void updateUser(RegisterUser registerUser) {
+		ModelMapper modelMapper = new ModelMapper();
+		User user = modelMapper.map(registerUser, User.class);
 		saveUser(user);
 	}
 
